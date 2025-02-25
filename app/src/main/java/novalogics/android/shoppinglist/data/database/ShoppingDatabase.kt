@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import novalogics.android.shoppinglist.data.database.entity.ShoppingItem
 
 /**
  * Represents the Room database for the ShoppingList application

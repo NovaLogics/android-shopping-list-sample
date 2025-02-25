@@ -1,4 +1,4 @@
-package novalogics.android.shoppinglist.data.database
+package novalogics.android.shoppinglist.data.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
