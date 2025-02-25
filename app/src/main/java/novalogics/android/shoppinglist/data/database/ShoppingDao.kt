@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import novalogics.android.shoppinglist.data.database.entity.ShoppingItem
 
 /**
  * Data Access Object (DAO) for performing database operations on the `shopping_item` table.
