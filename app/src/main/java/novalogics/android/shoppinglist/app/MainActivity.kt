@@ -1,10 +1,13 @@
-package novalogics.android.shoppinglist
+package novalogics.android.shoppinglist.app
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import novalogics.android.shoppinglist.databinding.ActivityMainBinding
+import novalogics.android.shoppinglist.ui.shoppinglist.ShoppingListFragment
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -16,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.tvMessage.text = "All Set!"
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(binding.fragmentContainer.id, ShoppingListFragment())
+                .commit()
+        }
     }
 }
