@@ -26,13 +26,6 @@ import novalogics.android.shoppinglist.data.database.entity.ShoppingItem
  * - `version`: Specifies the version of the database. Increment this value when the schema changes.
  * - `exportSchema`: Controls whether Room exports the database schema to a folder. Set to `false`
  *                   to disable schema export.
- *
- * Methods:
- * - `getShoppingDao()`: Provides access to the DAO (Data Access Object) for performing database operations.
- * - `invoke(context: Context)`: Returns the singleton instance of the database. If the instance
- *                               doesn't exist, it creates one using the provided context.
- * - `createDatabase(context: Context)`: Creates a new instance of the database using Room's
- *                                       databaseBuilder.
  */
 @Database(
     entities = [ShoppingItem::class],
@@ -45,25 +38,22 @@ abstract class ShoppingDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var instance: ShoppingDatabase? = null
-        private val LOCK = Any()
-
+        private var INSTANCE: ShoppingDatabase? = null
         /**
          * Returns the singleton instance of the database
          * If the instance doesn't exist, it creates one using the provided context
          */
-        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: createDatabase(context).also { instance = it }
+        fun getDatabase(context: Context): ShoppingDatabase {
+            return INSTANCE ?: synchronized(this) {
+                // Create a new instance of the database if it doesn't exist
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    ShoppingDatabase::class.java,
+                    "shopping_database.db"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
         }
-
-        /**
-         * Creates a new instance of the database using Room's databaseBuilder
-         */
-        private fun createDatabase(context: Context) =
-            Room.databaseBuilder(
-                context.applicationContext,
-                ShoppingDatabase::class.java,
-                "shopping_database.db"
-            ).build()
     }
 }

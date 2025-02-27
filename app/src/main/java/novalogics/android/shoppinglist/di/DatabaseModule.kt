@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import novalogics.android.shoppinglist.data.database.ShoppingDao
 import novalogics.android.shoppinglist.data.database.ShoppingDatabase
@@ -16,7 +17,7 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(context: Context): ShoppingDatabase {
-        return ShoppingDatabase(context = context)
+        return ShoppingDatabase.getDatabase(context = context)
     }
 
     @Provides
