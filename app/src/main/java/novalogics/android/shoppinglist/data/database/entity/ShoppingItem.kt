@@ -18,12 +18,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "shopping_items")
 data class ShoppingItem(
     @ColumnInfo(name = "item_name")
-    val name: String,
+    var name: String,
 
     @ColumnInfo(name = "item_amount")
-    val amount: Int,
+    var amount: Int,
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "item_id")
-    val id: Int? = null
+    var id: Int = 0
 }
