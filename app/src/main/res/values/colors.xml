@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#FF1976D2</color>
+    <color name="onPrimary">#FFFFFFFF</color>
+    <color name="primaryContainer">#FFBBDEFB</color>
+    <color name="onPrimaryContainer">#FF001A34</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#FF2196F3</color>
+    <color name="onSecondary">#FFFFFFFF</color>
+    <color name="secondaryContainer">#FF90CAF9</color>
+    <color name="onSecondaryContainer">#FF002952</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#FF0D47A1</color>
+    <color name="onTertiary">#FFFFFFFF</color>
+    <color name="tertiaryContainer">#FF64B5F6</color>
+    <color name="onTertiaryContainer">#FF001A34</color>
+
+    <!-- Error Colors -->
+    <color name="error">#FFB00020</color>
+    <color name="errorContainer">#FFFFDAD6</color>
+    <color name="onError">#FFFFFFFF</color>
+    <color name="onErrorContainer">#FF410002</color>
+
+    <!-- Background and Surface Colors -->
+    <color name="background">#FFE3F2FD</color>
+    <color name="onBackground">#FF1C1F1E</color>
+    <color name="surface">#FFBBDEFB</color>
+    <color name="onSurface">#FF1C1F1E</color>
+    <color name="surfaceVariant">#FF90CAF9</color>
+    <color name="onSurfaceVariant">#FF37474F</color>
+
+    <!-- Outline and Shadow Colors -->
+    <color name="outline">#FF78909C</color>
+    <color name="inverseOnSurface">#FFE3F2FD</color>
+    <color name="inverseSurface">#FF2E3B4A</color>
+    <color name="inversePrimary">#FF64B5F6</color>
+    <color name="shadow">#FF000000</color>
+    <color name="surfaceTint">#FF1976D2</color>
+    <color name="outlineVariant">#FFBBDEFB</color>
+    <color name="scrim">#FF000000</color>
+</resources>

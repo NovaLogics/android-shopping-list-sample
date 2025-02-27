@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ShoppingList" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Set the status bar color (optional, can be transparent) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Make the status bar icons dark in light theme and light in dark theme -->
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+
+        <!-- Set the navigation bar color (optional) -->
+        <item name="android:navigationBarColor">@color/surface</item>
+        <!-- Make the navigation bar icons dark in light theme and light in dark theme -->
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">?attr/isLightTheme</item>
+
+        <!-- Enable edge-to-edge display (transparent status and navigation bars) -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+
+        <!-- Add padding to account for status bar and navigation bar -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
+    </style>
+</resources>
